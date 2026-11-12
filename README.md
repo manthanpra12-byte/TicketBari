@@ -303,5 +303,3 @@ Open http://localhost:3000.
 
 Demo idea: run `docker compose stop booking` and watch the status page turn the booking breaker OPEN, then `docker compose start booking`.
 Note: if you edited `.env` for the load test, delete it first so the default limiter (capacity 20) is back.
-#   T i c k e t B a r i  
- 
