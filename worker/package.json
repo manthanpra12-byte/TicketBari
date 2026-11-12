@@ -1,0 +1,14 @@
+{
+  "name": "ticketbari-worker",
+  "version": "1.1.0",
+  "description": "TicketBari booking worker (Redis Streams consumer)",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "node test/retry.test.js && node test/processBooking.test.js"
+  },
+  "dependencies": {
+    "ioredis": "^5.4.1",
+    "pg": "^8.12.0"
+  }
+}

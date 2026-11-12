@@ -1,0 +1,14 @@
+{
+  "name": "ticketbari-gateway",
+  "version": "1.2.0",
+  "description": "TicketBari API gateway: routing, rate limiting, circuit breaker, health, metrics",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "node test/tokenBucket.test.js && node test/circuitBreaker.test.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "ioredis": "^5.4.1"
+  }
+}

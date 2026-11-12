@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TicketBari</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>🎬 TicketBari</h1>
+    <nav>
+      <button id="tab-book" class="tab active">Book tickets</button>
+      <button id="tab-status" class="tab">System status</button>
+    </nav>
+    <label class="user">You are
+      <input id="user-id" size="12" title="Your user id. Change it to pretend to be someone else.">
+    </label>
+  </header>
+
+  <div id="banner" class="banner hidden"></div>
+
+  <!-- PAGE 1: booking -->
+  <main id="page-book">
+    <section>
+      <h2>1. Pick a movie</h2>
+      <div id="movies" class="cards">Loading...</div>
+    </section>
+
+    <section id="shows-section" class="hidden">
+      <h2>2. Pick a show</h2>
+      <div id="shows" class="cards"></div>
+    </section>
+
+    <section id="seats-section" class="hidden">
+      <h2>3. Pick seats <small>(up to 6)</small></h2>
+      <div class="legend">
+        <span class="seat available"></span> free
+        <span class="seat selected"></span> your choice
+        <span class="seat held"></span> held by someone
+        <span class="seat booked"></span> sold
+      </div>
+      <div class="screen">SCREEN</div>
+      <div id="seats"></div>
+      <p>Selected: <b id="picked">none</b>
+        <button id="book-btn" disabled>Book selected seats</button></p>
+      <ol id="steps" class="steps"></ol>
+    </section>
+  </main>
+
+  <!-- PAGE 2: status dashboard -->
+  <main id="page-status" class="hidden">
+    <section>
+      <h2>Services <small>(from /health)</small></h2>
+      <div id="nodes" class="cards"></div>
+    </section>
+    <section>
+      <h2>Circuit breakers</h2>
+      <div id="circuits" class="cards"></div>
+    </section>
+    <section>
+      <h2>Live counters <small>(from /metrics, refreshes every 2 s)</small></h2>
+      <div id="metrics" class="cards"></div>
+    </section>
+    <section>
+      <h2>Try the rate limiter</h2>
+      <p>Sends 40 requests at once from this browser. The gateway lets about 20 through and answers the rest with 429.</p>
+      <button id="burst-btn">Send 40 requests</button>
+      <p id="burst-result"></p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
